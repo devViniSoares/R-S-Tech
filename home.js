@@ -235,3 +235,22 @@ function irParaCheckout() {
     }
     window.location.href = "checkout.html";
 }
+
+
+function irParaCheckout() {
+    // 1. Verifica se o carrinho está vazio
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    // 2. Verifica se o usuário está logado
+    if (!usuarioLogado) {
+        alert("Você precisa fazer login para finalizar a compra!");
+        window.location.href = "login.html";
+        return;
+    }
+
+    // 3. Se estiver tudo certo, vai para o pagamento
+    window.location.href = "checkout.html";
+}
