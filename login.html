@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | R&S TECH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="login-mode">
+
+    <div class="login-container">
+        <div class="login-info">
+            <h1>R&S <span class="highlight">TECH</span></h1>
+            <p>A tecnologia que você procura está aqui.</p>
+        </div>
+
+        <div class="login-form">
+    
+    <div id="login-box">
+        <h2>Bem-vindo de volta!</h2>
+        <p class="subtitle">Acesse sua conta para continuar.</p>
+
+        <form id="formLogin">
+            <div class="input-group">
+                <label for="email">E-mail</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-envelope icon"></i>
+                    <input type="email" id="email" placeholder="seu@email.com" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock icon"></i>
+                    <input type="password" id="password" placeholder="Sua senha" required>
+                    <i class="fa-solid fa-eye toggle-password" id="btnSenha"></i>
+                </div>
+            </div>
+
+            <div class="actions">
+                <a href="#" class="forgot-pass">Esqueci minha senha</a>
+            </div>
+
+            <button type="submit" class="btn-login">Entrar</button>
+
+            <div class="divider"><span>ou entre com</span></div>
+
+            <div class="social-login">
+                <button type="button" class="btn-social google"><i class="fa-brands fa-google"></i> Google</button>
+                <button type="button" class="btn-social facebook"><i class="fa-brands fa-facebook-f"></i> Facebook</button>
+            </div>
+
+            <p class="register-link">
+                Não tem uma conta? <a href="#" id="linkParaCadastro">Cadastre-se</a>
+            </p>
+        </form>
+    </div>
+
+    <div id="register-box" class="hide">
+        <h2>Crie sua conta</h2>
+        <p class="subtitle">Preencha seus dados para começar.</p>
+
+        <form id="formRegister">
+            <div class="input-group">
+                <label for="reg-name">Nome Completo</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-user icon"></i>
+                    <input type="text" id="reg-name" placeholder="Seu nome" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="reg-email">E-mail</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-envelope icon"></i>
+                    <input type="email" id="reg-email" placeholder="seu@email.com" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="reg-password">Senha</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock icon"></i>
+                    <input type="password" id="reg-password" placeholder="Crie uma senha forte" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="reg-confirm-password">Confirmar Senha</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock icon"></i>
+                    <input type="password" id="reg-confirm-password" placeholder="Repita a senha" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-login">Cadastrar</button>
+
+            <p class="register-link">
+                Já tem uma conta? <a href="#" id="linkParaLogin">Faça Login</a>
+            </p>
+        </form>
+    </div>
+
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

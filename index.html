@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | R&S TECH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">R&S <span class="highlight">TECH</span></div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Busque por produtos...">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="user-actions">
+            <div class="cart-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">0</span>
+            </div>
+            
+            <div id="auth-area">
+                </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tecnologia que transforma.</h1>
+            <p>Encontre os melhores periféricos e notebooks com preços imperdíveis.</p>
+            <button class="btn-cta">Ver Ofertas</button>
+        </div>
+    </section>
+
+    <section class="categories">
+    <h2>Navegue por Categoria</h2>
+    <div class="category-grid">
+        <div class="category-card" onclick="filtrarProdutos('Notebooks')">
+            <i class="fa-solid fa-laptop"></i>
+            <h3>Notebooks</h3>
+        </div>
+        <div class="category-card" onclick="filtrarProdutos('Periféricos')">
+            <i class="fa-solid fa-headset"></i>
+            <h3>Periféricos</h3>
+        </div>
+        <div class="category-card" onclick="filtrarProdutos('Monitores')">
+            <i class="fa-solid fa-desktop"></i> <h3>Monitores</h3>
+        </div>
+        <div class="category-card" onclick="filtrarProdutos('Acessórios')">
+            <i class="fa-solid fa-gamepad"></i>
+            <h3>Acessórios</h3>
+        </div>
+    </div>
+    </section>
+
+   <section class="products-section" id="area-produtos">
+    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 30px auto;">
+        <h2 id="titulo-produtos">Produtos em Destaque</h2>
+        <button onclick="carregarProdutos()" style="background: transparent; border: 1px solid #8a2be2; color: #fff; padding: 5px 15px; border-radius: 5px; cursor: pointer;">
+            Ver Todos
+        </button>
+    </div>
+    
+    <div class="product-grid" id="featured-products">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 R&S TECH - Ryan Silva Santos</p>
+    </footer>
+
+    <div class="cart-overlay" id="cart-overlay"></div> <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Teu Carrinho</h3>
+            <button onclick="fecharCarrinho()" class="btn-close-cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cart-items">
+            <p class="empty-msg">O carrinho está vazio.</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">R$ 0,00</span>
+            </div>
+            <button class="btn-checkout" onclick="irParaCheckout()">Finalizar Compra</button>
+        </div>
+    </div>
+
+
+    <script src="home.js"></script>
+</body>
+</html>

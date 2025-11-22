@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra | R&S TECH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar" style="justify-content: center;">
+        <div class="logo">R&S <span class="highlight">TECH</span> <span style="font-size: 0.8rem; color: #ccc;">| Checkout Seguro</span></div>
+    </header>
+
+    <div class="checkout-container">
+        
+        <div class="checkout-form">
+            <h2><i class="fa-solid fa-map-location-dot"></i> Endereço de Entrega</h2>
+            <form id="form-checkout">
+                <div class="input-group">
+                    <label>CEP</label>
+                    <input type="text" id="cep" placeholder="00000-000" maxlength="9" onblur="buscarCep()">
+                </div>
+                <div class="row">
+                    <div class="input-group" style="flex: 3;">
+                        <label>Rua</label>
+                        <input type="text" id="rua" readonly>
+                    </div>
+                    <div class="input-group" style="flex: 1;">
+                        <label>Número</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group">
+                        <label>Bairro</label>
+                        <input type="text" id="bairro" readonly>
+                    </div>
+                    <div class="input-group">
+                        <label>Cidade</label>
+                        <input type="text" id="cidade" readonly>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 30px;"><i class="fa-regular fa-credit-card"></i> Pagamento</h2>
+                
+                <div class="payment-options">
+                    <label class="payment-card selected">
+                        <input type="radio" name="pagamento" value="pix" checked>
+                        <i class="fa-brands fa-pix" style="color: #00b37e;"></i>
+                        <span>Pix (5% off)</span>
+                    </label>
+                    <label class="payment-card">
+                        <input type="radio" name="pagamento" value="cartao">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <span>Cartão</span>
+                    </label>
+                </div>
+
+                <div id="card-details" class="hide" style="margin-top: 15px;">
+                    <div class="input-group">
+                        <label>Número do Cartão</label>
+                        <input type="text" placeholder="0000 0000 0000 0000">
+                    </div>
+                    <div class="row">
+                        <div class="input-group">
+                            <label>Validade</label>
+                            <input type="text" placeholder="MM/AA">
+                        </div>
+                        <div class="input-group">
+                            <label>CVV</label>
+                            <input type="text" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="order-summary">
+            <h3>Resumo do Pedido</h3>
+            <div id="checkout-items">
+                </div>
+            
+            <div class="summary-divider"></div>
+            
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="summary-subtotal">R$ 0,00</span>
+            </div>
+            <div class="summary-row">
+                <span>Frete</span>
+                <span style="color: #00b37e;">Grátis</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="summary-total" style="color: #8a2be2;">R$ 0,00</span>
+            </div>
+
+            <button class="btn-finish" onclick="finalizarPedido()">CONFIRMAR PEDIDO</button>
+            <a href="index.html" class="back-link">Voltar para a loja</a>
+        </div>
+
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
