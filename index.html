@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | R&S TECH</title>
+    <title>R&S TECH | Sua Loja de Tecnologia</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -12,26 +12,27 @@
     <header class="navbar">
         <div class="logo">R&S <span class="highlight">TECH</span></div>
         
-        <div class="search-bar">
-            <input type="text" placeholder="Busque por produtos...">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="#area-produtos" class="nav-item">Produtos</a>
+            <a href="#contato" class="nav-item">Contato</a>
+        </nav>
 
         <div class="user-actions">
-            <div class="cart-icon">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span class="cart-count">0</span>
-            </div>
-            
-            <div id="auth-area">
+            <button id="btn-login" class="btn-primary" onclick="window.location.href='login.html'">Entrar</button>
+            <div id="user-info" class="user-menu" style="display: none;">
                 </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count-badge" class="badge">0</span>
+            </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>Tecnologia que transforma.</h1>
-            <p>Encontre os melhores periféricos e notebooks com preços imperdíveis.</p>
+            <h1>A Tecnologia que Você Precisa Está Aqui.</h1>
+            <p>Os melhores componentes e periféricos com até 15% OFF no PIX.</p>
             <button class="btn-cta" onclick="document.getElementById('area-produtos').scrollIntoView({ behavior: 'smooth' })">
                 Ver Ofertas
             </button>
@@ -39,55 +40,83 @@
     </section>
 
     <section class="categories">
-    <h2>Navegue por Categoria</h2>
-    <div class="category-grid">
-        <div class="category-card" onclick="filtrarProdutos('Notebooks')">
-            <i class="fa-solid fa-laptop"></i>
-            <h3>Notebooks</h3>
-        </div>
-        <div class="category-card" onclick="filtrarProdutos('Periféricos')">
-            <i class="fa-solid fa-headset"></i>
-            <h3>Periféricos</h3>
-        </div>
-        <div class="category-card" onclick="filtrarProdutos('Monitores')">
-            <i class="fa-solid fa-desktop"></i> <h3>Monitores</h3>
-        </div>
-        <div class="category-card" onclick="filtrarProdutos('Acessórios')">
-            <i class="fa-solid fa-gamepad"></i>
-            <h3>Acessórios</h3>
-        </div>
-    </div>
-    </section>
-
-   <section class="products-section" id="area-produtos">
-    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 30px auto;">
-        <h2 id="titulo-produtos">Produtos em Destaque</h2>
-        <button onclick="carregarProdutos()" style="background: transparent; border: 1px solid #8a2be2; color: #fff; padding: 5px 15px; border-radius: 5px; cursor: pointer;">
-            Ver Todos
-        </button>
-    </div>
-    
-    <div class="product-grid" id="featured-products">
+        <h2>Navegue por Categoria</h2>
+        <div class="category-grid">
+            <div class="category-card" onclick="filtrarProdutos('Notebooks')">
+                <i class="fa-solid fa-laptop"></i>
+                <h3>Notebooks</h3>
+            </div>
+            <div class="category-card" onclick="filtrarProdutos('Periféricos')">
+                <i class="fa-solid fa-headset"></i>
+                <h3>Periféricos</h3>
+            </div>
+            <div class="category-card" onclick="filtrarProdutos('Monitores')">
+                <i class="fa-solid fa-desktop"></i>
+                <h3>Monitores</h3>
+            </div>
+            <div class="category-card" onclick="filtrarProdutos('Componentes')">
+                <i class="fa-solid fa-microchip"></i>
+                <h3>Componentes</h3>
+            </div>
+            <div class="category-card" onclick="filtrarProdutos('Acessórios')">
+                <i class="fa-solid fa-gamepad"></i>
+                <h3>Acessórios</h3>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 R&S TECH - Ryan Silva Santos</p>
-    </footer>
-
-    <div class="cart-overlay" id="cart-overlay"></div> <div class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h3>Teu Carrinho</h3>
-            <button onclick="fecharCarrinho()" class="btn-close-cart">
-                <i class="fa-solid fa-xmark"></i>
+    <section class="products-section" id="area-produtos">
+        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 30px auto;">
+            <h2 id="titulo-produtos">Produtos em Destaque</h2>
+            <button onclick="carregarProdutos()" style="background: transparent; border: 1px solid #8a2be2; color: #fff; padding: 5px 15px; border-radius: 5px; cursor: pointer;">
+                Ver Todos
             </button>
         </div>
+        
+        <div class="product-grid" id="featured-products">
+            </div>
+    </section>
 
-        <div class="cart-items" id="cart-items">
-            <p class="empty-msg">O carrinho está vazio.</p>
+    <footer class="footer" id="contato">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>R&S <span class="highlight">TECH</span></h3>
+                <p>A melhor tecnologia para o seu setup está aqui. Qualidade, garantia e entrega rápida para todo o Brasil.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Fale Conosco</h3>
+                <ul class="footer-list">
+                    <li><i class="fa-solid fa-location-dot"></i> Av. Paulista, 1000 - São Paulo, SP</li>
+                    <li><i class="fa-solid fa-phone"></i> (11) 99999-8888</li>
+                    <li><i class="fa-solid fa-envelope"></i> contato@rstech.com.br</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 R&S TECH - Desenvolvido por Vini.</p>
+        </div>
+    </footer>
 
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Teu Carrinho</h3>
+            <i class="fa-solid fa-xmark close-btn" onclick="toggleCart()"></i>
+        </div>
+        <div id="cart-items-container" class="cart-items-container">
+            </div>
         <div class="cart-footer">
+            <div id="frete-gratis-msg" style="text-align: center; margin-bottom: 10px; font-size: 0.9rem;"></div>
             <div class="cart-total">
                 <span>Total:</span>
                 <span id="cart-total-value">R$ 0,00</span>
@@ -95,8 +124,9 @@
             <button class="btn-checkout" onclick="irParaCheckout()">Finalizar Compra</button>
         </div>
     </div>
-
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
 
     <script src="home.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Detalhes do Produto | R&S TECH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">R&S <span class="highlight">TECH</span></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            </nav>
+        <div class="user-actions">
+             <div id="auth-area">
+                </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count-badge" class="badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="details-container">
+        
+        <div class="details-gallery">
+            <img src="" alt="Imagem Principal do Produto" id="main-product-image" class="main-image">
+            <div class="thumbnail-gallery">
+                </div>
+        </div>
+
+        <div class="details-info">
+            <p class="product-category" id="product-category">Categoria</p>
+            <h1 id="product-name">Nome do Produto</h1>
+            
+            <div class="product-rating">
+                <i class="fa-solid fa-star"></i> 4.5
+                <span style="color: var(--subtext-color);">(250 avaliações)</span>
+            </div>
+
+            <p class="product-price-details" id="product-price">R$ 0,00</p>
+            <p class="payment-note">10% de desconto no PIX ou 10x sem juros.</p>
+
+            <div class="details-actions">
+                <input type="number" id="product-quantity" value="1" min="1" max="10" class="quantity-input">
+
+                <button id="add-to-cart-btn" class="btn-cta" style="width: 100%;">
+                    <i class="fa-solid fa-cart-plus"></i> Adicionar ao Carrinho
+                </button>
+            </div>
+            
+            <hr>
+
+            <div class="shipping-simulator">
+                <h3>Simular Frete</h3>
+                <div class="input-group-inline">
+                    <input type="text" id="shipping-cep" placeholder="Digite seu CEP">
+                    <button id="check-shipping-btn" class="btn-primary">Calcular</button>
+                </div>
+                <p id="shipping-result"></p>
+            </div>
+
+            <hr>
+            
+            <div class="product-description-full">
+                <h3>Descrição e Especificações</h3>
+                <p id="product-description-text">Carregando...</p>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="details.js"></script>
+</body>
+</html>
